@@ -9,9 +9,11 @@
 #import "SecondController.h"
 #import "TranstionAnimator.h"
 #import "FirstController.h"
+#import "PercentTransication.h"
 
 @interface SecondController()<UINavigationControllerDelegate>
-@property (nonatomic,strong) UIButton *pushButton;
+@property (nonatomic,strong) UIButton *popButton;
+@property (nonatomic,strong) PercentTransication *percentModel;
 @end
 
 @implementation SecondController
@@ -19,9 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self.view addSubview:self.pushButton];
-    self.pushButton.frame = CGRectMake(0, 0, 50, 50);
-    self.pushButton.center = self.view.center;
+    [self.view addSubview:self.popButton];
+    self.popButton.frame = CGRectMake(0, 0, 50, 50);
+    self.popButton.center = self.view.center;
+    
+    _percentModel = [PercentTransication initWithController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -46,15 +50,21 @@
     }
 }
 
+- (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
+    
+    return _percentModel.isStart ? _percentModel : nil;
+}
+
 #pragma mark - Setter && Getter
-- (UIButton *)pushButton{
-    if(!_pushButton){
-        _pushButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_pushButton setTitle:@"Pop" forState:UIControlStateNormal];
-        [_pushButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [_pushButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)popButton{
+    if(!_popButton){
+        _popButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_popButton setTitle:@"Pop" forState:UIControlStateNormal];
+        [_popButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_popButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _pushButton;
+    return _popButton;
 }
 
 

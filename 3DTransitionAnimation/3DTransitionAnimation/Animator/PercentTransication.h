@@ -8,13 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger,PercentType){
-    PercentTypePush,
-    PercentTypePop,
-};
-
 @interface PercentTransication : UIPercentDrivenInteractiveTransition
 @property (nonatomic,assign) BOOL isStart;
 @property (nonatomic,strong) UIViewController *controller;
-+ (instancetype)initWithController:(UIViewController *)controller type:(PercentType)type;
++ (instancetype)initWithController:(UIViewController *)controller;
 @end

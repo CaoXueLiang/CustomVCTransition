@@ -10,45 +10,38 @@
 
 @implementation PercentTransication
 #pragma mark - Init Menthod
-+ (instancetype)initWithController:(UIViewController *)controller type:(PercentType)type{
++ (instancetype)initWithController:(UIViewController *)controller{
     PercentTransication *model = [[PercentTransication alloc]init];
     model.controller = controller;
-    if(type == PercentTypePush){
-        [model addPushGesture:controller];
-    }else if (type == PercentTypePop){
-        [model addPopGesture:controller];
-    }
+    [model addPopGesture:controller];
     return model;
 }
 
-- (void)addPushGesture:(UIViewController *)controller{
-    UIScreenEdgePanGestureRecognizer *gesture = [UIScreenEdgePanGestureRecognizer alloc][initWithTarget:self action:@selector(rightPan:)];
-    gesture.edges = UIRectEdgeRight;
-    [controller.view addGestureRecognizer:gesture];
-}
-
 - (void)addPopGesture:(UIViewController *)controller{
-    UIScreenEdgePanGestureRecognizer *gesture = [UIScreenEdgePanGestureRecognizer alloc][initWithTarget:self action:@selector(leftPan:)];
+    UIScreenEdgePanGestureRecognizer *gesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(leftPan:)];
     gesture.edges = UIRectEdgeLeft;
     [controller.view addGestureRecognizer:gesture];
 }
 
-- (void)rightPan:(UIScreenEdgePanGestureRecognizer *)recognizer{
+- (void)leftPan:(UIScreenEdgePanGestureRecognizer *)recognizer{
     CGPoint currentPoint = [recognizer translationInView:recognizer.view];
     CGFloat progress = currentPoint.x/CGRectGetWidth(recognizer.view.frame);
     progress = MIN(1, MAX(0, progress));
     if (recognizer.state == UIGestureRecognizerStateBegan){
         _isStart = YES;
-   
+        [self.controller.navigationController popViewControllerAnimated:YES];
+        
     }else if (recognizer.state == UIGestureRecognizerStateChanged){
+        [self updateInteractiveTransition:progress];
         
     }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled){
-        
+        _isStart = NO;
+        if (progress > 0.4) {
+            [self finishInteractiveTransition];
+        }else{
+            [self cancelInteractiveTransition];
+        }
     }
-}
-
-- (void)leftPan:(UIScreenEdgePanGestureRecognizer *)recognizer{
-    
 }
 
 @end
