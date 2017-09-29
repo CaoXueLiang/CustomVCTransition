@@ -51,10 +51,10 @@
 		5894A2341F7E20F800A6E30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5894A2461F7E232800A6E30A /* CrossDissolveAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrossDissolveAnimation.h; sourceTree = "<group>"; };
 		5894A2471F7E232800A6E30A /* CrossDissolveAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossDissolveAnimation.m; sourceTree = "<group>"; };
-		5894A2491F7E350100A6E30A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		5894A24A1F7E350100A6E30A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		5894A24B1F7E350200A6E30A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		5894A24C1F7E350200A6E30A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5894A2491F7E350100A6E30A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = ../../SwipeTransition/SwipeTransition/FirstViewController.m; sourceTree = "<group>"; };
+		5894A24A1F7E350100A6E30A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ../../SwipeTransition/SwipeTransition/FirstViewController.h; sourceTree = "<group>"; };
+		5894A24B1F7E350200A6E30A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = ../../SwipeTransition/SwipeTransition/SecondViewController.h; sourceTree = "<group>"; };
+		5894A24C1F7E350200A6E30A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = ../../SwipeTransition/SwipeTransition/SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

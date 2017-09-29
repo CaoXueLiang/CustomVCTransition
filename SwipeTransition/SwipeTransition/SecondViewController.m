@@ -17,7 +17,12 @@
 #pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [[UIColor orangeColor]colorWithAlphaComponent:0.3];
+    
+    UIView *container = [[UIView alloc]initWithFrame:self.view.bounds];
+    container.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:container];
+    
+   // self.view.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.tipLabel];
     self.tipLabel.frame = CGRectMake(0, 0, 100, 100);
     self.tipLabel.center = self.view.center;
@@ -36,7 +41,7 @@
     if (!_tipLabel) {
         _tipLabel = [UILabel new];
         _tipLabel.text = @"B";
-        _tipLabel.textColor = [UIColor orangeColor];
+        _tipLabel.textColor = [UIColor whiteColor];
         _tipLabel.font = [UIFont systemFontOfSize:120];
         _tipLabel.textAlignment = NSTextAlignmentCenter;
     }
