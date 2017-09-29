@@ -31,13 +31,16 @@
 
 - (void)presentAnimation:(id <UIViewControllerContextTransitioning>)transitionContext{
     //获取fromVC和toVC和ContainerView
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewKey];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *contrinerView = [transitionContext containerView];
     
     //获取frame
+    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    CGRect fromFrame = [transitionContext initialFrameForViewController:fromVC];
     CGRect toFrame = [transitionContext finalFrameForViewController:toVC];
+    fromView.frame = fromFrame;
     toView.frame = CGRectMake(toFrame.origin.x +  CGRectGetWidth(toFrame), toFrame.origin.y, CGRectGetWidth(toFrame), CGRectGetHeight(toFrame));
 
     //添加到containerView
@@ -54,7 +57,7 @@
 
 - (void)dissmissAnimation:(id <UIViewControllerContextTransitioning>)transitionContext{
     //获取fromVC和toVC和ContainerView
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewKey];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *contrinerView = [transitionContext containerView];
     
@@ -62,7 +65,9 @@
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     
+    CGRect fromFrame = [transitionContext initialFrameForViewController:fromVC];
     CGRect toFrame = [transitionContext finalFrameForViewController:toVC];
+    fromView.frame = fromFrame;
     toView.frame = toFrame;
 
     //添加containerView
@@ -70,7 +75,7 @@
     
     //进行动画
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-        fromView.frame = CGRectMake(CGRectGetMaxX(fromView.frame), CGRectGetMinY(fromView.frame), CGRectGetWidth(fromView.frame), CGRectGetHeight(fromView.frame));
+        fromView.frame = CGRectMake(CGRectGetMaxX(fromFrame), CGRectGetMinY(fromFrame), CGRectGetWidth(fromFrame), CGRectGetHeight(fromFrame));
         
     } completion:^(BOOL finished) {
         //告诉transitionContext完成动画

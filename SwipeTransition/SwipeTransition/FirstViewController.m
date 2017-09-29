@@ -50,13 +50,13 @@
     return [SwipAnimator initWithType:AnimationTypeDissmiss];
 }
 
-- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator{
-    return _rightModel.rightIsStart ? _rightModel : nil;
-}
-
-- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
-    return nil;
-}
+//- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator{
+//    return _rightModel.rightIsStart ? _rightModel : nil;
+//}
+//
+//- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
+//    return nil;
+//}
 
 #pragma mark - Setter && Getter
 - (UILabel *)tipLabel{
