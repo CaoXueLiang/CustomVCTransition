@@ -7,7 +7,6 @@
 //
 
 #import "SecondViewController.h"
-#import "CustomPresentation.h"
 
 @interface SecondViewController ()
 @property (nonatomic,strong) UILabel *tipLabel;;
@@ -18,16 +17,14 @@
 #pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [[UIColor orangeColor]colorWithAlphaComponent:0.3];
     [self.view addSubview:self.tipLabel];
     self.tipLabel.frame = CGRectMake(0, 0, 100, 100);
-    self.tipLabel.center = CGPointMake(self.view.center.x, 100);
+    self.tipLabel.center = self.view.center;
     
     [self.view addSubview:self.dissButton];
     self.dissButton.frame = CGRectMake(0, 0, 100, 30);
-    self.dissButton.center = CGPointMake(CGRectGetMidX(self.view.frame),100 + 10 +20);
-    
-    self.preferredContentSize = CGSizeMake(self.view.bounds.size.width,270);
+    self.dissButton.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetHeight(self.view.frame) - 100);
 }
 
 - (void)disMiss{
@@ -57,3 +54,4 @@
 }
 
 @end
+

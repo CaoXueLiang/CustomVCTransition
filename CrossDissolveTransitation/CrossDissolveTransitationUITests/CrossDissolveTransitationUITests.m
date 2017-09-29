@@ -1,18 +1,18 @@
 //
-//  PresentControllerTransitionUITests.m
-//  PresentControllerTransitionUITests
+//  CrossDissolveTransitationUITests.m
+//  CrossDissolveTransitationUITests
 //
-//  Created by bjovov on 2017/9/28.
+//  Created by bjovov on 2017/9/29.
 //  Copyright © 2017年 CaoXueLiang.cn. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface PresentControllerTransitionUITests : XCTestCase
+@interface CrossDissolveTransitationUITests : XCTestCase
 
 @end
 
-@implementation PresentControllerTransitionUITests
+@implementation CrossDissolveTransitationUITests
 
 - (void)setUp {
     [super setUp];
