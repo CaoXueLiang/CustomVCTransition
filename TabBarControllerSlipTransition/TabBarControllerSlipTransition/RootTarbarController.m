@@ -29,11 +29,12 @@
     third.tabBarItem.title = @"third";
     self.viewControllers = @[first,second,third];
     self.delegate = self;
+    
+    _model = [[InteractiveModel alloc]initWithGesture:self];
 }
 
 #pragma mark - UITabBarControllerDelegate
-- (nullable id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC
-                                                       toViewController:(UIViewController *)toVC{
+- (nullable id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
     
     NSArray *viewControllers = self.viewControllers;
     if ([viewControllers indexOfObject:fromVC] > [viewControllers indexOfObject:toVC]) {
@@ -43,4 +44,10 @@
     }
 }
 
+- (nullable id <UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController interactionControllerForAnimationController: (id <UIViewControllerAnimatedTransitioning>)animationController{
+    
+    return _model.isStart ? _model: nil;
+}
+
 @end
+
