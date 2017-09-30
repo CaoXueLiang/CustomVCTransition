@@ -46,6 +46,7 @@
     //添加到containerView
     [contrinerView addSubview:toView];
     
+        
     //进行动画
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         toView.frame = toFrame;

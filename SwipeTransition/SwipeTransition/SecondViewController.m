@@ -7,10 +7,12 @@
 //
 
 #import "SecondViewController.h"
+#import "SwipeTransitionDelegate.h"
 
 @interface SecondViewController ()
-@property (nonatomic,strong) UILabel *tipLabel;;
+@property (nonatomic,strong) UILabel *tipLabel;
 @property (nonatomic,strong) UIButton *dissButton;
+@property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *recognizer;
 @end
 
 @implementation SecondViewController
@@ -30,6 +32,24 @@
     [self.view addSubview:self.dissButton];
     self.dissButton.frame = CGRectMake(0, 0, 100, 30);
     self.dissButton.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetHeight(self.view.frame) - 100);
+    
+    [self addGesture];
+}
+
+- (void)addGesture{
+    _recognizer = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(edgePan:)];
+    _recognizer.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:_recognizer];
+}
+
+#pragma mark - Event Response
+- (void)edgePan:(UIScreenEdgePanGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        SwipeTransitionDelegate *delegate = self.transitioningDelegate;
+        delegate.gestureRecognizer = _recognizer;
+        delegate.targetEdge = UIRectEdgeLeft;
+        [self disMiss];
+    }
 }
 
 - (void)disMiss{

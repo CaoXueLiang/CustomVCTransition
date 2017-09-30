@@ -8,14 +8,13 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "SwipAnimator.h"
-#import "PercentModel.h"
+#import "SwipeTransitionDelegate.h"
 
-@interface FirstViewController ()<UIViewControllerTransitioningDelegate>
-@property (nonatomic,strong) UILabel *tipLabel;;
+@interface FirstViewController ()
+@property (nonatomic,strong) UILabel *tipLabel;
 @property (nonatomic,strong) UIButton *presentButton;
-@property (nonatomic,strong) PercentModel *leftModel;
-@property (nonatomic,strong) PercentModel *rightModel;
+@property (nonatomic,strong) SwipeTransitionDelegate *swipeDelegate;
+@property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *recognizer;
 @end
 
 @implementation FirstViewController
@@ -31,32 +30,30 @@
     self.presentButton.frame = CGRectMake(0, 0, 100, 30);
     self.presentButton.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetHeight(self.view.frame) - 100);
     
-    _rightModel = [[PercentModel alloc]initWithController:self type:GestureDirectionRight];
+    [self addGesture];
+}
+
+- (void)addGesture{
+    _recognizer = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(edgePan:)];
+    _recognizer.edges = UIRectEdgeRight;
+    [self.view addGestureRecognizer:_recognizer];
+}
+
+#pragma mark - Event Response
+- (void)edgePan:(UIScreenEdgePanGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        self.swipeDelegate.gestureRecognizer = _recognizer;
+        self.swipeDelegate.targetEdge = UIRectEdgeRight;
+         [self present];
+    }
 }
 
 - (void)present{
     SecondViewController *controller = [[SecondViewController alloc]init];
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
-    controller.transitioningDelegate = self;
+    controller.transitioningDelegate = self.swipeDelegate;
     [self presentViewController:controller animated:YES completion:NULL];
 }
-
-#pragma mark - UIViewControllerTransitioningDelegate
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return [SwipAnimator initWithType:AnimationTypePresent];
-}
-
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    return [SwipAnimator initWithType:AnimationTypeDissmiss];
-}
-
-//- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator{
-//    return _rightModel.rightIsStart ? _rightModel : nil;
-//}
-//
-//- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
-//    return nil;
-//}
 
 #pragma mark - Setter && Getter
 - (UILabel *)tipLabel{
@@ -80,4 +77,12 @@
     return _presentButton;
 }
 
+- (SwipeTransitionDelegate *)swipeDelegate{
+    if (!_swipeDelegate) {
+        _swipeDelegate = [[SwipeTransitionDelegate alloc]init];
+    }
+    return _swipeDelegate;
+}
+
 @end
+

@@ -8,69 +8,55 @@
 
 #import "PercentModel.h"
 
+@interface PercentModel()
+@property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic, strong, readonly) UIScreenEdgePanGestureRecognizer *gestureRecognizer;
+@property (nonatomic, readonly) UIRectEdge edge;
+@end
 
 @implementation PercentModel
-#pragma mark - Init
-- (instancetype)initWithController:(UIViewController *)controller type:(GestureDirection)type{
-    PercentModel *model = [[PercentModel alloc]init];
-    model.controller = controller;
-    if (type == GestureDirectionLeft) {
-        [self addLeftGesture:controller];
-    }else if (type == GestureDirectionRight){
-        [self addRightGesture:controller];
+#pragma mark - Init Menthod
+- (instancetype)initWithGesture:(UIScreenEdgePanGestureRecognizer *)recognizer edge:(UIRectEdge)edge{
+    self = [self init];
+    if (self) {
+        _gestureRecognizer = recognizer;
+        _edge = edge;
+        [_gestureRecognizer addTarget:self action:@selector(gestureRecognizeDidUpdate:)];
     }
-    return model;
+    return self;
 }
 
-- (void)addLeftGesture:(UIViewController *)controller{
-    UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(leftPan:)];
-    pan.edges = UIRectEdgeLeft;
-    [controller.view addGestureRecognizer:pan];
+- (void)dealloc{
+    [_gestureRecognizer removeTarget:self action:@selector(gestureRecognizeDidUpdate:)];
 }
 
-- (void)addRightGesture:(UIViewController *)controller{
-    UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(rightPan:)];
-    pan.edges = UIRectEdgeRight;
-    [controller.view addGestureRecognizer:pan];
+#pragma mark - UIViewControllerInteractiveTransitioning
+- (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
+    //将转场上下文记录下来
+    self.transitionContext = transitionContext;
+    [super startInteractiveTransition:transitionContext];
 }
 
-#pragma mark - Event Response
-- (void)leftPan:(UIScreenEdgePanGestureRecognizer *)recognizer{
-    CGPoint point = [recognizer locationInView:recognizer.view];
-    CGFloat progress = point.x/CGRectGetWidth(recognizer.view.bounds);
+- (void)gestureRecognizeDidUpdate:(UIScreenEdgePanGestureRecognizer *)recognizer{
+    UIView *transitionContainerView = self.transitionContext.containerView;
+    CGFloat width = CGRectGetWidth(transitionContainerView.bounds);
+    CGPoint currentPoint = [recognizer locationInView:transitionContainerView];
+    
+    CGFloat progress = 0;
+    if (_edge == UIRectEdgeLeft) {
+        progress = currentPoint.x/width;
+    }else if (_edge == UIRectEdgeRight){
+        progress = (width - currentPoint.x)/width;
+    }
+    progress = MIN(1, MAX(0, progress));
+    
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        _leftIsStart = YES;
-        [self.controller dismissViewControllerAnimated:YES completion:NULL];
-        
+      
     }else if (recognizer.state == UIGestureRecognizerStateChanged){
         [self updateInteractiveTransition:progress];
         
     }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled){
-        _leftIsStart = NO;
-        if (progress > 0.4) {
-            [self finishInteractiveTransition];
-        }else{
-            [self cancelInteractiveTransition];
-        }
-    }
-}
-
-- (void)rightPan:(UIScreenEdgePanGestureRecognizer *)recognizer{
-    CGPoint point = [recognizer locationInView:recognizer.view];
-    CGFloat progress = point.x/CGRectGetWidth(recognizer.view.bounds);
-    if (recognizer.state == UIGestureRecognizerStateBegan) {
-//        _rightIsStart = YES;
-//        SecondViewController *controller = [[SecondViewController alloc]init];
-//        controller.modalPresentationStyle = UIModalPresentationFullScreen;
-//        controller.transitioningDelegate = self;
-//        [self presentViewController:controller animated:YES completion:NULL];
-        
-    }else if (recognizer.state == UIGestureRecognizerStateChanged){
-        [self updateInteractiveTransition:progress];
-        
-    }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled){
-        _rightIsStart = NO;
-        if (progress > 0.4) {
+        if (progress > 0.5) {
             [self finishInteractiveTransition];
         }else{
             [self cancelInteractiveTransition];
@@ -79,4 +65,5 @@
 }
 
 @end
+
 

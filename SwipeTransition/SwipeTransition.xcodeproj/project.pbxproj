@@ -17,6 +17,7 @@
 		5894A2921F7E35EC00A6E30A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5894A28F1F7E35EC00A6E30A /* SecondViewController.m */; };
 		5894A2961F7E3B1D00A6E30A /* SwipAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5894A2951F7E3B1D00A6E30A /* SwipAnimator.m */; };
 		5894A2991F7E54D100A6E30A /* PercentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5894A2981F7E54D100A6E30A /* PercentModel.m */; };
+		58DE19E71F7F842900AC599B /* SwipeTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE19E61F7F842900AC599B /* SwipeTransitionDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		5894A2951F7E3B1D00A6E30A /* SwipAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipAnimator.m; sourceTree = "<group>"; };
 		5894A2971F7E54D100A6E30A /* PercentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentModel.h; sourceTree = "<group>"; };
 		5894A2981F7E54D100A6E30A /* PercentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PercentModel.m; sourceTree = "<group>"; };
+		58DE19E51F7F842900AC599B /* SwipeTransitionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeTransitionDelegate.h; sourceTree = "<group>"; };
+		58DE19E61F7F842900AC599B /* SwipeTransitionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeTransitionDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				5894A2951F7E3B1D00A6E30A /* SwipAnimator.m */,
 				5894A2971F7E54D100A6E30A /* PercentModel.h */,
 				5894A2981F7E54D100A6E30A /* PercentModel.m */,
+				58DE19E51F7F842900AC599B /* SwipeTransitionDelegate.h */,
+				58DE19E61F7F842900AC599B /* SwipeTransitionDelegate.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DE19E71F7F842900AC599B /* SwipeTransitionDelegate.m in Sources */,
 				5894A2921F7E35EC00A6E30A /* SecondViewController.m in Sources */,
 				5894A2961F7E3B1D00A6E30A /* SwipAnimator.m in Sources */,
 				5894A26B1F7E35AC00A6E30A /* main.m in Sources */,
