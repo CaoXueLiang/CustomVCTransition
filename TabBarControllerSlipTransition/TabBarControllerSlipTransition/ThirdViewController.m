@@ -1,38 +1,34 @@
 //
-//  SecondViewController.m
-//  PresentControllerTransition
+//  ThirdViewController.m
+//  TabBarControllerSlipTransition
 //
-//  Created by bjovov on 2017/9/28.
+//  Created by bjovov on 2017/9/30.
 //  Copyright © 2017年 CaoXueLiang.cn. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ThirdViewController.h"
 
-@interface SecondViewController ()
+@interface ThirdViewController ()
 @property (nonatomic,strong) UILabel *tipLabel;
 @end
 
-@implementation SecondViewController
+@implementation ThirdViewController
 #pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIView *container = [[UIView alloc]initWithFrame:self.view.bounds];
-    container.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:container];
-    
-   // self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:self.tipLabel];
     self.tipLabel.frame = CGRectMake(0, 0, 100, 100);
     self.tipLabel.center = self.view.center;
-    self.navigationItem.title = @"Second";
+    
+    self.navigationItem.title = @"Third";
 }
 
 #pragma mark - Setter && Getter
 - (UILabel *)tipLabel{
     if (!_tipLabel) {
         _tipLabel = [UILabel new];
-        _tipLabel.text = @"B";
+        _tipLabel.text = @"C";
         _tipLabel.textColor = [UIColor whiteColor];
         _tipLabel.font = [UIFont systemFontOfSize:120];
         _tipLabel.textAlignment = NSTextAlignmentCenter;
@@ -40,5 +36,5 @@
     return _tipLabel;
 }
 
-@end
 
+@end
