@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
     [self.view addSubview:self.tipLabel];
+  
     self.tipLabel.frame = CGRectMake(0, 0, 100, 100);
     self.tipLabel.center = CGPointMake(self.view.center.x, 150);
     self.navigationItem.title = @"Second";
