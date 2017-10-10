@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583C7B4F1F8CAAF7008BB942 /* CustomPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C7B4E1F8CAAF7008BB942 /* CustomPresentController.m */; };
+		583C7B551F8CBF02008BB942 /* CustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C7B541F8CBF02008BB942 /* CustomAnimator.m */; };
+		583C7B581F8CD01B008BB942 /* PercentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583C7B571F8CD01B008BB942 /* PercentModel.m */; };
 		58DADBD01F8C970000DE3F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DADBCF1F8C970000DE3F8D /* AppDelegate.m */; };
 		58DADBD81F8C970100DE3F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DADBD71F8C970100DE3F8D /* Assets.xcassets */; };
 		58DADBDB1F8C970100DE3F8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DADBD91F8C970100DE3F8D /* LaunchScreen.storyboard */; };
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		583C7B4D1F8CAAF7008BB942 /* CustomPresentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPresentController.h; sourceTree = "<group>"; };
+		583C7B4E1F8CAAF7008BB942 /* CustomPresentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPresentController.m; sourceTree = "<group>"; };
+		583C7B531F8CBF02008BB942 /* CustomAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnimator.h; sourceTree = "<group>"; };
+		583C7B541F8CBF02008BB942 /* CustomAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnimator.m; sourceTree = "<group>"; };
+		583C7B561F8CD01B008BB942 /* PercentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentModel.h; sourceTree = "<group>"; };
+		583C7B571F8CD01B008BB942 /* PercentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PercentModel.m; sourceTree = "<group>"; };
 		58DADBCB1F8C970000DE3F8D /* CustomPresentationAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPresentationAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DADBCE1F8C970000DE3F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58DADBCF1F8C970000DE3F8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +147,12 @@
 		58DADC061F8C9C8200DE3F8D /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				583C7B4D1F8CAAF7008BB942 /* CustomPresentController.h */,
+				583C7B4E1F8CAAF7008BB942 /* CustomPresentController.m */,
+				583C7B531F8CBF02008BB942 /* CustomAnimator.h */,
+				583C7B541F8CBF02008BB942 /* CustomAnimator.m */,
+				583C7B561F8CD01B008BB942 /* PercentModel.h */,
+				583C7B571F8CD01B008BB942 /* PercentModel.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -275,7 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				58DADC051F8C973F00DE3F8D /* SecondViewController.m in Sources */,
+				583C7B551F8CBF02008BB942 /* CustomAnimator.m in Sources */,
 				58DADBDE1F8C970100DE3F8D /* main.m in Sources */,
+				583C7B4F1F8CAAF7008BB942 /* CustomPresentController.m in Sources */,
+				583C7B581F8CD01B008BB942 /* PercentModel.m in Sources */,
 				58DADC021F8C973200DE3F8D /* FirstViewController.m in Sources */,
 				58DADBD01F8C970000DE3F8D /* AppDelegate.m in Sources */,
 			);

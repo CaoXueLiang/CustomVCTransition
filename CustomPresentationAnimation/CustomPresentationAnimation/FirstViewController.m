@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "CustomPresentController.h"
 
 @interface FirstViewController ()
 @property (nonatomic,strong) UILabel *tipLabel;
@@ -32,6 +33,8 @@
 #pragma mark - Event Response
 - (void)present{
     SecondViewController *controller = [[SecondViewController alloc]init];
+    CustomPresentController *presentation = [[CustomPresentController alloc]initWithPresentedViewController:controller presentingViewController:self];
+    controller.transitioningDelegate = presentation;
     [self presentViewController:controller animated:YES completion:NULL];
 }
 
