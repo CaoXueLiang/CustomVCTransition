@@ -21,7 +21,7 @@
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator{
     if (self.gestureRecognizer) {
-        return [[PercentModel alloc]initWithGesture:self.gestureRecognizer edge:self.targetEdge];
+        return [[PercentModel alloc]initWithGesture:self.gestureRecognizer edge:UIRectEdgeRight];
     }else{
         return nil;
     }
@@ -29,7 +29,7 @@
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
     if (self.gestureRecognizer) {
-        return [[PercentModel alloc]initWithGesture:self.gestureRecognizer edge:self.targetEdge];
+        return [[PercentModel alloc]initWithGesture:self.gestureRecognizer edge:UIRectEdgeLeft];
     }else{
         return nil;
     }
