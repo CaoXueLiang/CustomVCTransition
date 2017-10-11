@@ -23,7 +23,7 @@
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext{
-    return 0.6f;
+    return 0.5f;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
@@ -52,6 +52,7 @@
         fromView.layer.anchorPoint = CGPointMake(0, 0.5);
         fromView.layer.position = CGPointMake(0, CGRectGetHeight(fromFrame)/2.0);
         
+        fromView.layer.transform = CATransform3DIdentity;
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             fromView.layer.transform = transform;
         } completion:^(BOOL finished) {

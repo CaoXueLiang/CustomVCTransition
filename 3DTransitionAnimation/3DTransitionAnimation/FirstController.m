@@ -43,11 +43,11 @@
                                             animationControllerForOperation:(UINavigationControllerOperation)operation
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC{
-//    if (operation == UINavigationControllerOperationPush) {
-//     return [TranstionAnimator initWithType:AnimationTypePush];
-//    }else{
+    if (operation == UINavigationControllerOperationPush) {
+     return [TranstionAnimator initWithType:AnimationTypePush];
+    }else{
         return nil;
-    //}
+    }
 }
 
 #pragma mark - Setter && Getter
