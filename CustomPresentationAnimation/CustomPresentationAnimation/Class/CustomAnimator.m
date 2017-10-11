@@ -44,7 +44,6 @@
     
     CGRect fromViewFrame = [transitionContext initialFrameForViewController:fromVC];
     CGRect toViewFrame = [transitionContext finalFrameForViewController:toVC];
-    [containerView addSubview:toView];
     
     /*进行动画*/
     if (_type == AnimationTypePresent) {
@@ -52,8 +51,12 @@
         orginalFrame.origin = CGPointMake(CGRectGetMinX(containerView.bounds), CGRectGetMaxY(containerView.bounds));
         orginalFrame.size = toViewFrame.size;
         toView.frame = orginalFrame;
+        [containerView addSubview:toView];
     }else if (_type == AnimationTypeDissmiss){
         
+        /**
+         处理 Dismissal 转场，按照上一小节的结论，.Custom模式下不要将 toView添加到 containerView
+         */
         fromViewFrame = CGRectOffset(fromViewFrame, 0, CGRectGetHeight(containerView.bounds));
     }
     
@@ -66,6 +69,7 @@
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
+    
 }
 
 @end
