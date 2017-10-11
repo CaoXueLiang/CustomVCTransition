@@ -43,8 +43,8 @@
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC{
     
-    if (operation == UINavigationControllerOperationPop && [toVC isKindOfClass:[FirstController class]]){
-        return [TranstionAnimator initWithType:AnimationTypePop];
+    if (operation == UINavigationControllerOperationPop) {
+       return [TranstionAnimator initWithType:AnimationTypePop];
     }else{
         return nil;
     }
