@@ -9,6 +9,7 @@
 #import "FirstController.h"
 #import "SecondController.h"
 #import "TranstionAnimator.h"
+#import "LayerAnimation.h"
 
 @interface FirstController ()<UINavigationControllerDelegate>
 @property (nonatomic,strong) UIImageView *backImageView;
@@ -44,7 +45,8 @@
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC{
     if (operation == UINavigationControllerOperationPush) {
-     return [TranstionAnimator initWithType:AnimationTypePush];
+     //return [TranstionAnimator initWithType:AnimationTypePush];
+        return [LayerAnimation initWithType:typePush];
     }else{
         return nil;
     }

@@ -10,6 +10,7 @@
 #import "TranstionAnimator.h"
 #import "FirstController.h"
 #import "PercentTransication.h"
+#import "LayerAnimation.h"
 
 @interface SecondController()<UINavigationControllerDelegate>
 @property (nonatomic,strong) UIButton *popButton;
@@ -44,7 +45,8 @@
                                                            toViewController:(UIViewController *)toVC{
     
     if (operation == UINavigationControllerOperationPop) {
-       return [TranstionAnimator initWithType:AnimationTypePop];
+       //return [TranstionAnimator initWithType:AnimationTypePop];
+        return [LayerAnimation initWithType:typePop];
     }else{
         return nil;
     }
