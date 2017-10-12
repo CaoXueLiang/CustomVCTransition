@@ -44,6 +44,7 @@
 		264E1A2136EA11D8BB7D007F /* Pods-KeyNoteVCTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyNoteVCTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeyNoteVCTransition/Pods-KeyNoteVCTransition.release.xcconfig"; sourceTree = "<group>"; };
 		5827D3F81F7A450A00F0A3F9 /* MagicMoveAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicMoveAnimator.h; sourceTree = "<group>"; };
 		5827D3F91F7A450A00F0A3F9 /* MagicMoveAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicMoveAnimator.m; sourceTree = "<group>"; };
+		5840C1FB1F8F4FA900B64F7E /* Untitledyy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitledyy.gif; sourceTree = "<group>"; };
 		588DEBA01F7B94CD0094B0FF /* PercentDrivenTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PercentDrivenTransition.m; sourceTree = "<group>"; };
 		588DEBA11F7B94CD0094B0FF /* PercentDrivenTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentDrivenTransition.h; sourceTree = "<group>"; };
 		58B895181F79FAED009E085A /* KeyNoteVCTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyNoteVCTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +109,7 @@
 		58B8950F1F79FAED009E085A = {
 			isa = PBXGroup;
 			children = (
+				5840C1FB1F8F4FA900B64F7E /* Untitledyy.gif */,
 				58B8951A1F79FAED009E085A /* KeyNoteVCTransition */,
 				58B895331F79FAEE009E085A /* KeyNoteVCTransitionTests */,
 				58B8953E1F79FAEE009E085A /* KeyNoteVCTransitionUITests */,
@@ -528,7 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
+				DEVELOPMENT_TEAM = 49YMBTW8W3;
 				INFOPLIST_FILE = KeyNoteVCTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,7 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
+				DEVELOPMENT_TEAM = 49YMBTW8W3;
 				INFOPLIST_FILE = KeyNoteVCTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

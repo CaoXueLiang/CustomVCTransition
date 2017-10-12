@@ -48,7 +48,7 @@
     UIView *snapShotView = [selectCell.avatarimageView snapshotViewAfterScreenUpdates:NO];
     
     // 将rect从view中转换到当前视图中，返回在当前视图中的rect
-    snapShotView.frame = fromVC.finalCellRect =[containerView convertRect:selectCell.avatarimageView.frame fromView:selectCell.avatarimageView.superview];
+    snapShotView.frame = fromVC.finalCellRect = [containerView convertRect:selectCell.avatarimageView.frame fromView:selectCell.avatarimageView.superview];
     selectCell.avatarimageView.hidden = YES;
     
     

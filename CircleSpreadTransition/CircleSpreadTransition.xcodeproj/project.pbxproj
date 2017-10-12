@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5840C1FC1F8F70CC00B64F7E /* Untitledyy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitledyy.gif; sourceTree = "<group>"; };
 		588DEB9A1F7B87C30094B0FF /* PercentTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentTransition.h; sourceTree = "<group>"; };
 		588DEB9B1F7B87C30094B0FF /* PercentTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PercentTransition.m; sourceTree = "<group>"; };
 		C3E782B01F7A9D6D00D2E42C /* CircleSpreadTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleSpreadTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +89,7 @@
 		C3E782A71F7A9D6D00D2E42C = {
 			isa = PBXGroup;
 			children = (
+				5840C1FC1F8F70CC00B64F7E /* Untitledyy.gif */,
 				C3E782B21F7A9D6D00D2E42C /* CircleSpreadTransition */,
 				C3E782CB1F7A9D6D00D2E42C /* CircleSpreadTransitionTests */,
 				C3E782D61F7A9D6D00D2E42C /* CircleSpreadTransitionUITests */,
@@ -447,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
 				INFOPLIST_FILE = CircleSpreadTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -464,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
 				INFOPLIST_FILE = CircleSpreadTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PercentTransition : UIPercentDrivenInteractiveTransition
-+ (instancetype)initWithController:(UIViewController *)controller;
++ (instancetype)initWith:(UIViewController *)controller;
 @property (nonatomic,assign) BOOL isStart;
 @end

@@ -28,7 +28,7 @@
     [self.view addSubview:self.backButton];
     self.backButton.frame = CGRectMake(10, 20, 50, 50);
 
-    _model = [PercentTransition initWithController:self];
+    _model = [PercentTransition initWith:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -55,12 +55,8 @@
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                                    interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
     
-    if ([animationController isKindOfClass:[CircleTransitionAnimator class]]) {
-        //手势开始的时候才需要传入手势过渡代理，如果直接点击pop，应该传入空，否者无法通过点击正常pop
-        return _model.isStart ? _model : nil;
-    }else{
-        return nil;
-    }
+    //手势开始的时候才需要传入手势过渡代理，如果直接点击pop，应该传入空，否者无法通过点击正常pop
+    return _model.isStart ? _model : nil;
 }
 
 #pragma mark - Setter && Getter

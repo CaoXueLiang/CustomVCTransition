@@ -15,7 +15,7 @@
 
 @implementation PercentTransition
 #pragma mark - Init Menthod
-+ (instancetype)initWithController:(UIViewController *)controller{
++ (instancetype)initWith:(UIViewController *)controller{
     PercentTransition *model = [[PercentTransition alloc]init];
     model.controller = controller;
     model.rect = controller.view.bounds;
@@ -37,10 +37,10 @@
     if (recognizer.state == UIGestureRecognizerStateBegan){
         _isStart = YES;
         [self.controller.navigationController popViewControllerAnimated:YES];
-        
+
     }else if (recognizer.state == UIGestureRecognizerStateChanged){
         [self updateInteractiveTransition:progress];
-        
+
     }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled){
         _isStart = NO;
         if (progress > 0.4){

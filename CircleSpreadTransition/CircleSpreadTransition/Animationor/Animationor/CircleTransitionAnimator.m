@@ -56,7 +56,6 @@
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     
     //将参与变换的视图添加到contaier上
-    [containerView addSubview:fromVC.view];
     [containerView addSubview:toVC.view];
     toVC.view.layer.mask = maskLayer;
     //防止最后闪屏一下
@@ -91,8 +90,7 @@
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     
     //将参与变换的视图添加到contaier上
-    [containerView addSubview:toVC.view];
-    [containerView addSubview:fromVC.view];
+    [containerView insertSubview:toVC.view belowSubview:fromVC.view];
     fromVC.view.layer.mask = maskLayer;
     //防止最后闪屏一下
     maskLayer.path = endPath.CGPath;
